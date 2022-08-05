@@ -5,15 +5,22 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//12969
+//12954
 import Foundation
 
-let n = readLine()!.components(separatedBy: [" "]).map { Int($0)! }
-let (a, b) = (n[0], n[1])
-
-for i in 1...b {
-    for j in 1...a {
-        print("*", terminator: "")
+func solution(_ x:Int, _ n:Int) -> [Int64] {
+    var arr: [Int64] = []
+    let by = x
+    let cycle = n
+    
+    for i in 0...cycle-1 {
+        let newElement = by + by * i
+        arr.append(Int64(newElement))
     }
-    print()
+    
+    return arr
 }
+
+print(solution(2, 2))
+print(solution(3, 5))
+print(solution(-4, 3))
