@@ -5,22 +5,24 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//12954
+//12948
 import Foundation
 
-func solution(_ x:Int, _ n:Int) -> [Int64] {
-    var arr: [Int64] = []
-    let by = x
-    let cycle = n
+func solution1(_ phone_number: String) -> String {
+    var numStr = Array(phone_number)
     
-    for i in 0...cycle-1 {
-        let newElement = by + by * i
-        arr.append(Int64(newElement))
+    if numStr.count > 4 {
+        for i in 0...numStr.endIndex - 5 {
+            numStr[i] = "*"
+        }
     }
-    
-    return arr
+    return String(numStr)
 }
 
-print(solution(2, 2))
-print(solution(3, 5))
-print(solution(-4, 3))
+func solution2(_ phone_number: String) -> String {
+    return String(repeating: "*", count: phone_number.count-4) + phone_number.suffix(4)
+}
+
+print(solution1("01033334444"))
+print(solution1("027778888"))
+print(solution1("4444"))
