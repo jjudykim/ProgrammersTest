@@ -5,24 +5,33 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//12948
+//12916
 import Foundation
 
-func solution1(_ phone_number: String) -> String {
-    var numStr = Array(phone_number)
+func solution1(_ s: String) -> Bool {
+    let str = s
+    var ans: Bool = false
+    var countY = 0
+    var countP = 0
     
-    if numStr.count > 4 {
-        for i in 0...numStr.endIndex - 5 {
-            numStr[i] = "*"
+    for i in s {
+        if i == "p" || i == "P" {
+            countP += 1
+        }
+        if i == "y" || i == "Y" {
+            countY += 1
         }
     }
-    return String(numStr)
+    
+    ans = countY == countP ? true : false
+    
+    return ans
 }
 
-func solution2(_ phone_number: String) -> String {
-    return String(repeating: "*", count: phone_number.count-4) + phone_number.suffix(4)
+func solution2(_ s: String) -> Bool {
+    let string = s.lowercased()
+    return string.components(separatedBy: "p").count == string.components(separatedBy: "y").count
 }
 
-print(solution1("01033334444"))
-print(solution1("027778888"))
-print(solution1("4444"))
+print(solution1("pooopYSIJWp"))
+print(solution2("POOOoppopoyyyz"))
