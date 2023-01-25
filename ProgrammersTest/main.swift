@@ -5,33 +5,9 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//12916
+//120803
 import Foundation
 
-func solution1(_ s: String) -> Bool {
-    let str = s
-    var ans: Bool = false
-    var countY = 0
-    var countP = 0
-    
-    for i in s {
-        if i == "p" || i == "P" {
-            countP += 1
-        }
-        if i == "y" || i == "Y" {
-            countY += 1
-        }
-    }
-    
-    ans = countY == countP ? true : false
-    
-    return ans
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return num1 - num2
 }
-
-func solution2(_ s: String) -> Bool {
-    let string = s.lowercased()
-    return string.components(separatedBy: "p").count == string.components(separatedBy: "y").count
-}
-
-print(solution1("pooopYSIJWp"))
-print(solution2("POOOoppopoyyyz"))
