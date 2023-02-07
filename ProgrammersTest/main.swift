@@ -5,9 +5,9 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//120804
+//120820
 import Foundation
 
-func solution(_ num1:Int, _ num2:Int) -> Int {
-    return num1 * num2
+func solution(_ age:Int) -> Int {
+    return 2022 - age + 1
 }
