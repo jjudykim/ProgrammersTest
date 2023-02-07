@@ -5,9 +5,9 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//120820
+//120806
 import Foundation
 
-func solution(_ age:Int) -> Int {
-    return 2022 - age + 1
+func solution(_ num1:Int, _ num2:Int) -> Int {
+    return Int(Double(num1) / Double(num2) * 1000.0)
 }
