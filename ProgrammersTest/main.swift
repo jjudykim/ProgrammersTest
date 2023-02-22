@@ -9,11 +9,10 @@
 
 import Foundation
 
-func solution(_ numbers:[Int], _ num1:Int, _ num2:Int) -> [Int] {
-    var newNumbers = [Int]()
-    for i in num1...num2 {
-        newNumbers.append(numbers[i])
-    }
+func solution1(_ numbers:[Int], _ num1:Int, _ num2:Int) -> [Int] {
+    return (num1...num2).map{numbers[$0]}
+}
 
-    return newNumbers
+func solution2(_ numbers:[Int], _ num1:Int, _ num2:Int) -> [Int] {
+    return Array(numbers[num1...num2])
 }
