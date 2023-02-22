@@ -5,8 +5,10 @@
 //  Created by jjudy on 2022/08/05.
 //
 
-//120817
+//120830
+
 import Foundation
 
-func solution(_ numbers: [Int]) -> Double { Double(numbers.reduce(0, +)) / Double(numbers.count) }
-// reduce 함수 찾아서 읽어보기
+func solution(_ n:Int, _ k:Int) -> Int {
+    return (n * 12000 + k * 2000) - (n / 10 * 2000)
+}
