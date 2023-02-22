@@ -8,10 +8,5 @@
 //120817
 import Foundation
 
-func solution(_ numbers:[Int]) -> Double {
-    var sum = 0
-    for i in numbers {
-        sum += i
-    }
-    return Double(sum) / Double(numbers.count)
-}
+func solution(_ numbers: [Int]) -> Double { Double(numbers.reduce(0, +)) / Double(numbers.count) }
+// reduce 함수 찾아서 읽어보기
